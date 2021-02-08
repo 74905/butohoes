@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_07_095918) do
+ActiveRecord::Schema.define(version: 2021_02_07_135357) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "music_choices", force: :cascade do |t|
+    t.bigint "music_id"
+    t.text "lyrics"
+    t.string "song_title"
+    t.string "background_image_id"
+    t.text "commentary"
+    t.string "sound_cloud"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["music_id"], name: "index_music_choices_on_music_id"
+  end
 
   create_table "musics", force: :cascade do |t|
     t.string "image_id"
@@ -33,4 +45,5 @@ ActiveRecord::Schema.define(version: 2021_02_07_095918) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "music_choices", "musics"
 end
