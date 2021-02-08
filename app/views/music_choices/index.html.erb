@@ -1,3 +1,17 @@
+<h1>プレビュー</h1>
 <% @music_choices.each do |choice| %>
+<div id="<%= choice.id%>">
+  <%= choice.song_title %>
+</div>
 <%= choice.sound_cloud.to_s.html_safe %>
+<% end %>
+
+<% @music_choices.each do |choice| %>
+
+    <%= simple_format(choice.commentary)%>
+    <div class="lyrics" style="color: <%= choice.color %>">
+      <%= simple_format(choice.lyrics) %>
+    </div>
+    <%= attachment_image_tag choice, :background_image, class:"choice-image", format: 'png' %>
+<%= link_to "削除", music_music_choice_path(choice.music, choice), method: :delete, local: true %>
 <% end %>
