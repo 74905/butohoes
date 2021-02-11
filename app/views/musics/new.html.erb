@@ -1,0 +1,11 @@
+<h1>ミュージックの作成</h1>
+<%= form_with model: @music, local:true do |f| %>
+<%= f.attachment_field :image %>
+<%= f.submit "作成" %>
+<% end %>
+
+<% @musics.each do |music| %>
+  <%= link_to music_path(music.id) do %>
+  <%= attachment_image_tag music, :image, format: 'png', size: "286x180" %>
+  <% end %>
+<% end %>
