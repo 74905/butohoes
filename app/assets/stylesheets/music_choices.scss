@@ -3,10 +3,27 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .lyrics{
-  writing-mode: vertical-rl; 
-  margin: 0 auto; 
+  height: 300px;
+  margin: 0 auto;
+  writing-mode: vertical-rl;
+  position: relative;
+  font-weight: bold;
+  top: 30px;
+  font-family: 'Noto Serif JP', serif;
+  &.float{
+    &:hover{
+     box-shadow: 0 0 10px black;
+    }
+    
+  }
+}
+.back-image{
+  width: 100%;
+  height: 400px;
+ position: relative;
 }
 .choice-image{
   width: 100%;
-  height: 550px;
+  height: 400px;
+  position: absolute;
 }

@@ -3,15 +3,21 @@
 <div id="<%= choice.id%>">
   <%= choice.song_title %>
 </div>
+<div class="sound">
 <%= choice.sound_cloud.to_s.html_safe %>
+</div>
 <% end %>
 
 <% @music_choices.each do |choice| %>
+<%= simple_format(choice.commentary)%>
+   <div class="back-image">
+     <%= attachment_image_tag choice, :background_image, class:"choice-image", format: 'png' %>
+      <div class="lyrics float" style="color: <%= choice.color %>">
+        <%= simple_format(choice.lyrics) %>
+      </div>
+   </div>
 
-    <%= simple_format(choice.commentary)%>
-    <div class="lyrics" style="color: <%= choice.color %>">
-      <%= simple_format(choice.lyrics) %>
-    </div>
-    <%= attachment_image_tag choice, :background_image, class:"choice-image", format: 'png' %>
-<%= link_to "削除", music_music_choice_path(choice.music, choice), method: :delete, local: true %>
+    <%= link_to "削除", music_music_choice_path(choice.music, choice), method: :delete, local: true %>
+    <%= link_to "戻る", music_path(choice.music) %>
+    <%= link_to "編集", edit_music_music_choice_path(choice.music, choice) %>
 <% end %>
