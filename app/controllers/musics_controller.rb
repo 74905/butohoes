@@ -14,7 +14,9 @@ class MusicsController < ApplicationController
   end
   
   def show
-    
+    @music =Music.find(params[:id])
+    @music_choice = MusicChoice.new
+    @music_choices = @music.music_choices
   end
 private
 
