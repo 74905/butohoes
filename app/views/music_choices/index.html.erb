@@ -1,23 +1,43 @@
-<h1>プレビュー</h1>
-<% @music_choices.each do |choice| %>
-<div id="<%= choice.id%>">
-  <%= choice.song_title %>
-</div>
-<div class="sound">
-<%= choice.sound_cloud.to_s.html_safe %>
-</div>
-<% end %>
-
-<% @music_choices.each do |choice| %>
-<%= simple_format(choice.commentary)%>
-   <div class="back-image">
-     <%= attachment_image_tag choice, :background_image, class:"choice-image", format: 'png' %>
-      <div class="lyrics float" style="color: <%= choice.color %>">
-        <%= simple_format(choice.lyrics) %>
+<div id="global-container">
+  <h1>プレビュー</h1>
+  <% @music_choices.each do |choice| %>
+  <div class="row mx-3">
+  <div class="col-4">
+    <div id="<%= choice.id%>">
+      <%= choice.song_title %>
+    </div>
+  </div>
+  <div class="col-7">
+      <div class="sound">
+      <%= choice.sound_cloud.to_s.html_safe %>
       </div>
-   </div>
+  </div>
+  </div>
+  <% end %>
 
-    <%= link_to "削除", music_music_choice_path(choice.music, choice), method: :delete, local: true %>
-    <%= link_to "戻る", music_path(choice.music) %>
-    <%= link_to "編集", edit_music_music_choice_path(choice.music, choice) %>
-<% end %>
+  <% @music_choices.each do |choice| %>
+    <div class="back-image">
+      <%= attachment_image_tag choice, :background_image, class:"choice-image", format: 'png' %>
+        <div class="lyrics float" style="color: <%= choice.color %>">
+          <div data-iziModal-open=".iziModal_<%= choice.id %>">
+          <%= simple_format(choice.lyrics) %>
+          </div>
+        </div>
+        <div class="iziModal_<%= choice.id %>" data-izimodal-title="解説" data-izimodal-subtitle="解説者">
+            <div class="commentary">
+              <%= simple_format(choice.commentary)%>
+            </div>
+        </div>
+    </div>
+
+      <%= link_to "削除", music_music_choice_path(choice.music, choice), method: :delete, local: true %>
+      <%= link_to "戻る", music_path(choice.music), class:"btn btn-info" %>
+      <%= link_to "編集", edit_music_music_choice_path(choice.music, choice) %>
+
+  <script type="text/javascript">
+  $(function(){
+    $(".iziModal_<%= choice.id %>").iziModal();
+  })
+  </script>
+  <% end %>
+</div>

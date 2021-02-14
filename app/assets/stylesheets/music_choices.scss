@@ -13,9 +13,13 @@
   &.float{
     &:hover{
      box-shadow: 0 0 10px black;
+     cursor: pointer;
     }
     
   }
+}
+.commentary{
+  font-family: 'Noto Serif JP', serif;
 }
 .back-image{
   width: 100%;
