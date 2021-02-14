@@ -19,4 +19,4 @@
 <%= attachment_image_tag choice, :background_image, format: 'png', size: "100x100" %>
 <% end %>
 
-<%= link_to "プレビューをみる",music_music_choices_path(@music.id) %>
+<%= link_to "プレビューをみる",music_music_choices_path(@music.id), "data-turbolinks" => "false" %>
