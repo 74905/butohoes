@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_07_135357) do
+ActiveRecord::Schema.define(version: 2021_02_08_130514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,11 +24,20 @@ ActiveRecord::Schema.define(version: 2021_02_07_135357) do
     t.string "sound_cloud"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "color"
     t.index ["music_id"], name: "index_music_choices_on_music_id"
   end
 
   create_table "musics", force: :cascade do |t|
     t.string "image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "notices", force: :cascade do |t|
+    t.string "notice_title"
+    t.text "introduction"
+    t.string "notice_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

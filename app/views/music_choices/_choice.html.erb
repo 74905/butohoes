@@ -1,4 +1,4 @@
-<%= form_with(model: [@music, @music_choice], local: true) do |f| %>
+<%= form_with(model: [music, music_choice], local: true) do |f| %>
 <%= f.label "歌詞" %>
 <%= f.text_area :lyrics %>
 <%= f.label "歌詞色"%>
@@ -13,10 +13,3 @@
 <%= f.text_field :sound_cloud %>
 <%= f.submit "作成"%>
 <% end %>
-
-<% @music_choices.each do |choice| %>
-<%= choice.song_title %>
-<%= attachment_image_tag choice, :background_image, format: 'png', size: "100x100" %>
-<% end %>
-
-<%= link_to "プレビューをみる",music_music_choices_path(@music.id) %>

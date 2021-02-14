@@ -5,10 +5,11 @@ class MusicsController < ApplicationController
   end
 
   def create
-    music = Music.new(music_params)
-    if music.save
+    @music = Music.new(music_params)
+    if @music.save
       redirect_to new_music_path
     else
+      @musics = Music.all
       render :new
     end
   end
