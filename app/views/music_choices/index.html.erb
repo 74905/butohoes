@@ -1,20 +1,23 @@
 <div id="butohes-log">
   <div id="butohes-log-image" class="cover-slide inview">
-    <%= image_tag asset_path("butohes_logo_white.png", alt: "ゲーム画像1"), class:"logo" %><br>
+    <%= image_tag asset_path("butohes_logo_white.png", alt: "butohes.logo"), class:"logo" %><br>
   </div>
 </div>
 
 <div id="global-container">
   <h1>プレビュー</h1>
-  <% @music_choices.each do |choice| %>
-  <div class="row mx-3">
-  <div class="col-4">
-    <div id="<%= choice.id%>">
-      <%= choice.song_title %>
+  <div class="main-image">
+    <%= image_tag asset_path("main.jpg", alt: "butohes"), class:"main-image-b" %>
+     <% @music_choices.each do |choice| %>
+   　 <span class="main-title">
+      　<%= choice.song_title %>
+    　</span>
+ 　　 <% end %>
+   　<div class="main-footer">
+      <%= image_tag asset_path("arrow.svg"), class:"down-arrow" %>
+     <span class="main-text">scroll</span>
     </div>
   </div>
-  </div>
-  <% end %>
 
   <% @music_choices.each do |choice| %>
     <div class="back-image">
