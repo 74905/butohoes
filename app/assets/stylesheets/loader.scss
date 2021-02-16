@@ -5,11 +5,11 @@
   height: 100%;
   top: 0px;
   left: 0px;
-  background: white;
+  background: black;
   z-index: 1;
 }
 .cover-slide {
-  width: 200px;
+  width: 300px;
   height: 80px;
   position: relative;
   overflow: hidden;
@@ -25,7 +25,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color:black;
+    background-color: white;
   }
   &.inview {
     &::after {
@@ -40,8 +40,8 @@
 .logo {
   opacity: 0;
   .inview & {
-    width: 200px;
-    height: 50px;
+    width: 300px;
+    height: 60px;
     opacity: 1;
     @include animation(
       $name: kf-cover-show,
@@ -89,6 +89,6 @@
   visibility: hidden;
   opacity: 0;
 }
-#global-container{
-  display: none;
-}
+// #global-container{
+//   display: none;
+// }
