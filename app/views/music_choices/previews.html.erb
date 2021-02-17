@@ -1,5 +1,5 @@
+
 <div id="global-container">
-  <h1>プレビュー</h1>
   <div class="main-image">
     <%= image_tag asset_path("main.jpg", alt: "butohes"), class:"main-image-b" %>
      <span class="main-title animate__animated animate__fadeInUp">Water In Cycle</span>
@@ -29,17 +29,20 @@
       </span>
     </div>
 
-      <%= link_to "削除", music_music_choice_path(choice.music, choice), method: :delete, local: true %>
-      <%= link_to "戻る", music_path(choice.music), class:"btn btn-info" %>
-      <%= link_to "編集", edit_music_music_choice_path(choice.music, choice) %>
-
   <script type="text/javascript">
   $(function(){
     $(".iziModal_<%= choice.id %>").iziModal();
   })
   </script>
   <% end %>
-  <%= link_to "総合プレビュー",  music_previews_path, "data-turbolinks" => "false" %>
-</div>
-
-
+  </div>
+<style>
+  .back-image {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s;
+}
+</style>
