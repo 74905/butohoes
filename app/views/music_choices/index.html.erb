@@ -1,3 +1,9 @@
+<div id="butohes-log">
+  <div id="butohes-log-image" class="cover-slide inview">
+    <%= image_tag asset_path("butohes_logo_white.png", alt: "ゲーム画像1"), class:"logo" %><br>
+  </div>
+</div>
+
 <div id="global-container">
   <h1>プレビュー</h1>
   <% @music_choices.each do |choice| %>
@@ -6,11 +12,6 @@
     <div id="<%= choice.id%>">
       <%= choice.song_title %>
     </div>
-  </div>
-  <div class="col-7">
-      <div class="sound">
-      <%= choice.sound_cloud.to_s.html_safe %>
-      </div>
   </div>
   </div>
   <% end %>
@@ -28,6 +29,7 @@
               <%= simple_format(choice.commentary)%>
             </div>
         </div>
+         <%= choice.sound_cloud.to_s.html_safe %>
     </div>
 
       <%= link_to "削除", music_music_choice_path(choice.music, choice), method: :delete, local: true %>
