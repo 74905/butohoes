@@ -5,6 +5,11 @@ class MusicChoicesController < ApplicationController
     @music_choices = music.music_choices
   end
 
+  def previews
+    music = Music.find(params[:music_id])
+    @music_choices = music.music_choices
+  end
+
   def create
     music = Music.find(params[:music_id])
     music_choice = music.music_choices.build(choice_params)

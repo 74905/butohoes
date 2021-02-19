@@ -1,20 +1,14 @@
-<div id="butohes-log">
-  <div id="butohes-log-image" class="cover-slide inview">
-    <%= image_tag asset_path("butohes_logo_white.png", alt: "ゲーム画像1"), class:"logo" %><br>
-  </div>
-</div>
-
 <div id="global-container">
   <h1>プレビュー</h1>
-  <% @music_choices.each do |choice| %>
-  <div class="row mx-3">
-  <div class="col-4">
-    <div id="<%= choice.id%>">
-      <%= choice.song_title %>
+  <div class="main-image">
+    <%= image_tag asset_path("main.jpg", alt: "butohes"), class:"main-image-b" %>
+     <span class="main-title animate__animated animate__fadeInUp">Water In Cycle</span>
+     <span class="main-title2 animate__animated animate__fadeInUp">First EP</span>
+   　<div class="main-footer">
+      <%= image_tag asset_path("arrow.svg"), class:"down-arrow" %>
+     <span class="main-text">scroll</span>
     </div>
   </div>
-  </div>
-  <% end %>
 
   <% @music_choices.each do |choice| %>
     <div class="back-image">
@@ -30,6 +24,9 @@
             </div>
         </div>
          <%= choice.sound_cloud.to_s.html_safe %>
+      <span class="title" style="color: <%= choice.color %>;">
+      　<%= choice.song_title %>
+      </span>
     </div>
 
       <%= link_to "削除", music_music_choice_path(choice.music, choice), method: :delete, local: true %>
@@ -42,4 +39,12 @@
   })
   </script>
   <% end %>
+  <%= link_to "総合プレビュー",  music_previews_path, "data-turbolinks" => "false" %>
 </div>
+
+<script>
+ $(function() {
+  $('#butohes-log').css('display','none');
+  $('#butohes-log-image').css('display','none'); 
+})
+</script>

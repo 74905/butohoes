@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root "homes#top"
   resources :musics do
     resources :music_choices, expect: [:new, :show]
+    get '/previews' => 'music_choices#previews'
   end
 end

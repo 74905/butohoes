@@ -1,0 +1,48 @@
+
+<div id="global-container">
+  <div class="main-image">
+    <%= image_tag asset_path("main.jpg", alt: "butohes"), class:"main-image-b" %>
+     <span class="main-title animate__animated animate__fadeInUp">Water In Cycle</span>
+     <span class="main-title2 animate__animated animate__fadeInUp">First EP</span>
+   　<div class="main-footer">
+      <%= image_tag asset_path("arrow.svg"), class:"down-arrow" %>
+     <span class="main-text">scroll</span>
+    </div>
+  </div>
+
+  <% @music_choices.each do |choice| %>
+    <div class="back-image">
+      <%= attachment_image_tag choice, :background_image, class:"choice-image", format: 'png' %>
+        <div class="lyrics float" style="color: <%= choice.color %>">
+          <div data-iziModal-open=".iziModal_<%= choice.id %>">
+          <%= simple_format(choice.lyrics) %>
+          </div>
+        </div>
+        <div class="iziModal_<%= choice.id %>" data-izimodal-title="解説" data-izimodal-subtitle="解説者">
+            <div class="commentary">
+              <%= simple_format(choice.commentary)%>
+            </div>
+        </div>
+         <%= choice.sound_cloud.to_s.html_safe %>
+      <span class="title" style="color: <%= choice.color %>;">
+      　<%= choice.song_title %>
+      </span>
+    </div>
+
+  <script type="text/javascript">
+  $(function(){
+    $(".iziModal_<%= choice.id %>").iziModal();
+  })
+  </script>
+  <% end %>
+  </div>
+<style>
+  .back-image {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s;
+}
+</style>
