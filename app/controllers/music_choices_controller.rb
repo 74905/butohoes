@@ -2,7 +2,7 @@ class MusicChoicesController < ApplicationController
 
   def index
     music = Music.find(params[:music_id])
-    @music_choices = music.music_choices
+    @music_choices = music.music_choices.order(created_at: :asc)
   end
 
   def previews
