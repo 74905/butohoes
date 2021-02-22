@@ -13,6 +13,10 @@ class MusicsController < ApplicationController
       render :new
     end
   end
+
+  def index
+
+  end
   
   def show
     @music =Music.find(params[:id])

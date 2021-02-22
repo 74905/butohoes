@@ -11,6 +11,13 @@ $(window).on('load', function () { //全ての読み込みが完了したら実�
   $('.back-image').addClass('back-image3');
   $('#global-container').hide().fadeIn(5000);
   });
+  $(document).ready(function() {
+    $('.main-image-b').ripples({
+    resolution: 500,
+    dropRadius: 10,
+    perturbance: 0.08
+    });
+    });
 
   $(function(){
     $(window).scroll(function (){
@@ -23,7 +30,15 @@ $(window).on('load', function () { //全ての読み込みが完了したら実�
                 $(this).css('transform','translateX(0)');
             }
         });
+        $('.side').each(function(){
+          var targetElement = $(this).offset().top;
+          var scroll = $(window).scrollTop();
+          var windowHeight = $(window).height();
+          if (scroll > targetElement - windowHeight + 500){
+              $('.left').css('opacity','1');
+              $('.left').css('left','50px');
+          }
+      });
     });
 });
-
 
