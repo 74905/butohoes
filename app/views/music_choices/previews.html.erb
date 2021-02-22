@@ -1,20 +1,20 @@
 
 <div id="global-container" style="background-color: #000044;">
   <div class="main-image">
-    <%= image_tag asset_path("main.jpg", alt: "butohes"), class:"main-image-b" %>
-     <span class="main-title animate__animated animate__fadeInUp">Lost in Water cycle</span>
+     <div class="main-image-b"></div>
+     <span class="main-title animate__animated animate__fadeInUp">Lost in Watercycle</span>
      <span class="main-title2 animate__animated animate__fadeInUp">First EP</span>
    　<div class="main-footer">
       <%= image_tag asset_path("arrow.svg"), class:"down-arrow" %>
      <span class="main-text">scroll</span>
     </div>
   </div>
-   <aside class="side left">
+   <%# <aside class="side left">
     <div class="side_inner">
         <a class="twitter icon" href="#">Twitter</a>
         <a class="instagram icon" href="#">Instagram</a>
     </div>
-  </aside>
+  </aside> %>
   <% @music_choices.each do |choice| %>
     <div id="image-songs"class="back-image">
       <%= attachment_image_tag choice, :background_image, class:"choice-image", format: 'png' %>
@@ -39,13 +39,15 @@
     $(".iziModal_<%= choice.id %>").iziModal();
   })
   </script>
+
   <% end %>
-   <aside class="side right">
+   <%# <aside class="side right">
     <div class="side_inner">
     <span>©︎butohes</span>
     </div>
-  </aside>
+  </aside> %>
   </div>
 <%= javascript_include_tag 'TweenMax.min.js' %>
 <%= javascript_include_tag 'music_choices.js' %>
 <%= javascript_include_tag 'iziModal.min.js' %>
+<%= javascript_include_tag 'jquery.ripples-min.js' %>

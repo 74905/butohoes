@@ -15,3 +15,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w( iziModal.min.js )
 Rails.application.config.assets.precompile += %w( music_choices.js )
 Rails.application.config.assets.precompile += %w( TweenMax.min.js )
+

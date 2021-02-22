@@ -1,7 +1,8 @@
 <div id="global-container">
   <h1>プレビュー</h1>
   <div class="main-image">
-    <%= image_tag asset_path("main.jpg", alt: "butohes"), class:"main-image-b" %>
+    <%#= image_tag asset_path("main.jpg", alt: "butohes"), class:"main-image-b" %>
+    <div class="main-image-b"></div>
      <span class="main-title animate__animated animate__fadeInUp">　Lost in Water cycle</span>
      <span class="main-title2 animate__animated animate__fadeInUp">First EP</span>
    　<div class="main-footer">
@@ -9,12 +10,12 @@
      <span class="main-text">scroll</span>
     </div>
   </div>
-  <aside class="side left">
-    <div class="side_inner">
+  <%# <aside class="side left">
+    <div class="side_inner animate__animated animate__fadeInLeft">
     <a class="twitter icon" href="#">Twitter</a>
     <a class="instagram icon" href="#">Instagram</a>
     </div>
-  </aside>
+  </aside> %>
   <% @music_choices.each do |choice| %>
     <div class="back-image">
       <%= attachment_image_tag choice, :background_image, class:"choice-image", format: 'png' %>
@@ -44,12 +45,51 @@
   })
   </script>
   <% end %>
-   <aside class="side right">
+   <%# <aside class="side right">
     <div class="side_inner">
     <span>©︎butohes</span>
     </div>
-  </aside>
+  </aside> %>
   <%= link_to "総合プレビュー",  music_previews_path, "data-turbolinks" => "false" %>
 </div>
-
+<div class="text-test">
+  <div class="lyrics" style="color: white;">
+    <p> <br>まぶたを下ろして眼を開けると、無辺際の空間に立っていた。<br>
+    目の前、ぼんやりと自分の影が映っている。果てが見えない、大きなガラスだった。<br>
+  <br>
+  　ガラスの向こうを注視すると、泡が見えたが止まっている。<br>
+    なぜかそれを個体に入った気泡だとは認識しなかった。<br>
+    向こうにあるのは、水だと、どこかで知っていたようだ。<br>
+  <br>
+  　ふりかえると、無数の小さな水槽が嵌め込まれている。<br>
+    水族館とおなじように、そのひとつひとつに魚の名前と解説文を載せるためのプレートが添えてあった。<br>
+    しかし、そこに何が書かれているのかは読み取れない。<br>
+  <br>
+  　歩きながら中を覗く。けれど、どれも中には、水があるだけだった。<br>
+  <br>
+  　いくら歩いても出口はなく、一本道。奥行きは認められず、これといった変化もない。何時間も過ぎたころに、その水槽の中に細切れの錯覚が見えはじめる。
+  </p>
+  </div>
+  <div class="lyrics" style="color: white;">
+    三角形の陽だまり／足に落ちた波の影　エンドロール／豪雨の音／骨だけになった傘に絡まる蔦／半分になったデススターのようなオブジェ／指先／<br>
+    impression, soleil levant／深海魚の標本／誰かの髪/消え入りそうな白い声音<br>
+    <br>
+  　ふと、ガラスに手を添えた。コツ、と音がする。手のひらをみると、亀裂が入っていた。隙間から、水が流れ出す。<br>
+    こぼれることがおそろしいことだと思って、もう片方の手で抑えようとするけれど、うまくいかない。<br>
+  <br>
+  　狼狽えているうちに全身が震えはじめる。いや、震えているのはこの空間そのものだった。<br>
+    無数のガラスにも、大きなガラスにも、罅が入る。亀裂の奥に水泡が、いくつも流れていく。ただし、上から下へ。無数の線と無数の球。<br>
+    なにかの譜面のようだ。<br>
+  <br>
+  　なんとか走り出そうとする。向かう先はわからない。
+    光が見えた気がしたほうへ、よろめきながら走り出す、その一歩めで、決壊した。<br>
+  　すぐに溺れた。すべてが雪崩れこんでくる。なかったことにしたかった、裏返しておいた、あらゆるシーンが。どこかへ向かって落ちていく。<br>
+    <br>
+    <br>
+    <br>
+  　体がなくなった<br>
+  <br>
+  　遠くで、誰かが、光の言葉を話した
+  </div>
+</div>
 <%= javascript_include_tag 'iziModal.min.js' %>

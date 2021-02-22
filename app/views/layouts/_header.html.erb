@@ -1,4 +1,15 @@
-<% if user_signed_in? %>
- <%= link_to "ログアウト",  destroy_user_session_path, method: :delete %>
- <%= link_to "曲作成",  new_music_path %>
-<% end %>
+<header class="header">
+ <div class="header_logo"></div>
+ <nav>
+  <% if user_signed_in? %>
+  <%= link_to "ログアウト",  destroy_user_session_path, class:"bt2 solid", method: :delete %>
+  <%= link_to "曲作成",  new_music_path,class:"bt2 letter-spacing" %>
+  <%= link_to "Music",  musics_path, class:"bt2 kent" %>
+  <%= link_to home_bio_path, class:"bt2 filled " do %>
+  <span></span>
+  Bio
+  <% end %>
+  <a href="#" class="bt cubic"><span class="hovering">coming soon</span><span class="default">Store</span></a>
+  <% end %>
+ </nav>
+</header>
