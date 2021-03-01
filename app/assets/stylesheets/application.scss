@@ -16,8 +16,8 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-$cWhite: white;
-$cBlack: black;
+$cWhite: black;
+$cBlack: white;
 * {
   margin: 0;
   padding: 0;
@@ -26,7 +26,7 @@ $cBlack: black;
 header {
   width: 100%;
   height: 60px;
-  background-color: white;
+  background-color: $cWhite;
   display: flex;
   position: relative;
   z-index: 1;
@@ -42,7 +42,7 @@ nav {
 .header_logo {
   height: 60px;
   width: 180px;
-  background-image: image-url("butohes-logo.png");
+  background-image: image-url("butohes_logo_white.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -76,15 +76,17 @@ nav {
     }
 
     & .hovering {
-      background-color: $cBlack;
-      color: $cWhite;
+      background-color: $cWhite;
+      color: $cBlack;
       transform: rotateX(90deg);
+      font-family: "Playfair Display", serif;
     }
 
     & .default {
-      background-color: white;
-      color: black;
+      background-color: $cWhite;
+      color: $cBlack;
       transform: rotateX(0);
+      font-family: "Playfair Display", serif;
     }
 
     &:hover {
@@ -101,7 +103,6 @@ nav {
   position: relative;
   display: inline-block;
   background-color: $cWhite;
-  border: 1px solid $cBlack;
   font-weight: 600;
   padding: 10px 40px;
   margin-right: 20px;
@@ -110,39 +111,65 @@ nav {
   color: $cBlack;
   text-decoration: none !important;
   top: -17px;
-  &.filled {
-    background-color: $cBlack;
-    color: $cWhite;
-    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+  &.cubic {
+    & span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      // border: 1px solid $cBlack;
+      line-height: 48px;
+      text-align: center;
+      transition: all 0.3s;
+      transform-origin: center center -25px;
+    }
 
-    &:hover {
+    & .hovering {
       background-color: $cWhite;
       color: $cBlack;
-      box-shadow: none;
+      transform: rotateX(90deg);
+      font-family: "Playfair Display", serif;
+    }
+
+    & .default {
+      background-color: $cWhite;
+      color: $cBlack;
+      transform: rotateX(0);
+      font-family: "Playfair Display", serif;
+    }
+
+    &:hover {
+      & .hovering {
+        transform: rotateX(0);
+      }
+      & .default {
+        transform: rotateX(-90deg);
+      }
     }
   }
 
-    &.letter-spacing:hover {
-      background-color: $cBlack;
-      letter-spacing: 3px;
-      color: $cWhite;
-    }
+  &.letter-spacing:hover {
+    background-color: $cBlack;
+    letter-spacing: 3px;
+    color: $cWhite;
+  }
 
-    &.kent {
+  &.kent {
+    box-shadow: none;
+    &:hover {
+      transform: translate(-2.5px, -2.5px);
+      box-shadow: 5px 5px 0 0 $cBlack;
+    }
+  }
+
+  &.solid {
+    box-shadow: 2px 2px 0 0 $cBlack;
+    border-radius: 7px;
+
+    &:hover {
+      transform: translate(2px, 2px);
       box-shadow: none;
-      &:hover {
-        transform: translate(-2.5px, -2.5px);
-        box-shadow: 5px 5px 0 0 $cBlack;
-      }
     }
-
-    &.solid {
-      box-shadow: 2px 2px 0 0 $cBlack;
-      border-radius: 7px;
-
-      &:hover {
-        transform: translate(2px, 2px);
-        box-shadow: none;
-      }
-    }
+  }
 }

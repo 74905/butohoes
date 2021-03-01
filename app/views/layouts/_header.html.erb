@@ -1,15 +1,26 @@
 <header class="header">
- <div class="header_logo"></div>
+  <%= link_to root_path do%>
+  <div class="header_logo"></div>
+  <% end %>
  <nav>
-  <% if user_signed_in? %>
-  <%= link_to "ログアウト",  destroy_user_session_path, class:"bt2 solid", method: :delete %>
-  <%= link_to "曲作成",  new_music_path,class:"bt2 letter-spacing" %>
-  <%= link_to "Music",  musics_path, class:"bt2 kent" %>
-  <%= link_to home_bio_path, class:"bt2 filled " do %>
-  <span></span>
-  Bio
-  <% end %>
-  <a href="#" class="bt cubic"><span class="hovering">coming soon</span><span class="default">Store</span></a>
-  <% end %>
+      <% if user_signed_in? %>
+          <%= link_to destroy_user_session_path, class:"bt cubic", method: :delete do %>
+           <span class="hovering">ログアウト</span><span class="default">logout</span>
+          <% end %>
+
+          <%= link_to new_music_path,class:"bt cubic" do %>
+          <span class="hovering">曲作成</span><span class="default">Create</span>
+          <% end %>
+
+          <%= link_to musics_path, class:"bt cubic" do %>
+          <span class="hovering">Discography</span><span class="default">Music</span>
+          <% end %>
+
+          <%= link_to home_bio_path, class:"bt cubic " do %>
+          <span class="hovering">biography</span><span class="default">Bio</span>
+          <% end %>
+
+          <a href="#" class="bt cubic"><span class="hovering">coming soon</span><span class="default">Store</span></a>
+      <% end %>
  </nav>
 </header>
