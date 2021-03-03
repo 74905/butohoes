@@ -18,13 +18,18 @@
   </head>
 
   <body>
-<div id="butohes-log">
-  <div id="butohes-log-image" class="cover-slide inview">
-    <%= image_tag asset_path("butohes_logo_white.png", alt: "butohes.logo"), class:"logo" %><br>
+  <div id="butohes-log">
+    <div id="butohes-log-image" class="cover-slide inview">
+      <%= image_tag asset_path("butohes_logo_white.png", alt: "butohes.logo"), class:"logo" %><br>
+    </div>
   </div>
-</div>
-  <%= render "layouts/header" %>
-    <%= yield %>
+  <div class="global-container">
+    <%= render "layouts/header" %>
+      <%= yield %>
+    <footer>
+    <p class="footer-text">©butohes</p>
+    </footer>
+  </div>
   </body>
 </html>
 

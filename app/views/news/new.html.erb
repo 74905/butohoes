@@ -1,0 +1,25 @@
+  <div class="container">
+    <div class="row"> 
+     <div class="col-12 mx-auto">
+    <%= form_with model: @news, local: true do |f| %>
+    
+    <div class="field">
+    <%= f.label "タイトル" %>
+    <%= f.text_field :title, class:"form-control"%>
+    </div>
+
+   <div class="field">
+    <%= f.label "内容" %>
+    <%= f.text_area :body, class:"form-control" %>
+   </div>
+
+   <div class="field">
+    <%= f.label "画像"%>
+    <%= f.attachment_field :news_image %>
+   </div>
+   
+    <%= f.submit "作成", class:"btn btn-info"%>
+    <% end %>
+    </div>
+   </div>
+  </div>

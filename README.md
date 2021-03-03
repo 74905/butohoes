@@ -23,3 +23,9 @@ Things you may want to cover:
 
 * ...
 // = require_tree .
+
+<div id="butohes-log">
+  <div id="butohes-log-image" class="cover-slide inview">
+    <%= image_tag asset_path("butohes_logo_white.png", alt: "butohes.logo"), class:"logo" %><br>
+  </div>
+</div>

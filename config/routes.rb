@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     resources :music_choices, expect: [:new, :show]
     get '/previews' => 'music_choices#previews'
   end
+  resources :news
 end
