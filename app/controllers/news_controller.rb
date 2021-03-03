@@ -8,6 +8,10 @@ class NewsController < ApplicationController
     news.save
     redirect_to root_path
   end
+
+  def show
+    
+  end
   private
   def news_params
     params.require(:news).permit(:title, :body, :news_image)
