@@ -93,3 +93,8 @@
   </div>
 </div>
 <%= javascript_include_tag 'iziModal.min.js' %>
+<script>
+$(window).on("load", function(){
+ $("div").removeClass("global-container");
+});
+</script>

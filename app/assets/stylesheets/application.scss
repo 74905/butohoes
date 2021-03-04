@@ -23,11 +23,17 @@ $cBlack: white;
   padding: 0;
   box-sizing: border-box;
 }
+
 a {
   text-decoration: none;
   &:hover{
     text-decoration: none;
   }
+}
+.global-container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 header {
   width: 100%;
@@ -181,13 +187,15 @@ nav {
 }
 
 footer{
+  margin-top: auto;
+}
+.footer-visual{
   width: 100%;
-  height: 100px;
   text-align: center;
   border-top: 1px solid black;
   line-height: 88px;
-}
-.footer-text{
-  font-size: 20px;
-  font-family: "Playfair Display", serif;
+  & .footer-text{
+    font-size: 20px;
+    font-family: "Playfair Display", serif;
+  }
 }
