@@ -5,8 +5,7 @@ main{
   padding-top: 30px;
   min-height: 100vh;
   background-size: auto auto;
-  background-color: rgba(255, 255, 255, 1);
-  background-image: repeating-linear-gradient(106deg, transparent, transparent 28px, rgba(0, 0, 0, 0.74) 28px, rgba(0, 0, 0, 0.74) 29px );
+  background-color: rgba(238, 238, 238, 0.5);
 }
 .main_visual{
  padding-top: 30px;
@@ -109,9 +108,12 @@ main{
   }
 }
 .news-title{
+  text-align: center;
+  & .text{
   color: black;
   font-size: 40px;
   font-family: 'Noto Serif', serif;
+  }
 }
 .card-text{
   font-family: 'Noto Serif', serif;
@@ -256,4 +258,16 @@ main{
   width: 0; 
   right: 100%;
 }
+}
+.news-main{
+  border: double black;
+}
+.news-object{
+  opacity: 0;
+  transform : translate(0, 50px);
+  transition : all 1500ms;
+  &.scrollin{
+    opacity: 1;
+    transform: translate(0, 0);
+  }
 }

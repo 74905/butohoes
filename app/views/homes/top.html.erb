@@ -6,13 +6,15 @@
     <a class="EP_link"><span>Coming Soon</span><em></em></a>
   </div>
   <div class="main">
-   <span class="news-title">News</span>
+   <div class="news-title">
+    <span class="text">News</span>
+   </div>
    <div class="container">
-    <div class="row">
+    <div class="row p-4 news-main">
       <% @news.each do |news| %>
-         <div class="col-lg-4 col-xs-12">
+         <div class="news-object col-lg-4 col-xs-12">
          <%= link_to news_path(news.id) do %>
-          <div class="card bg-light h-100" style="width: 15rem;">
+          <div class="card bg-light h-100" style="width: 15rem; margin: 0 auto;">
                 <%= attachment_image_tag news, :news_image,　format: 'png', fallback: "news.jpg", size: "237x200" %>
               <div class="card-body">
                 <p class="card-text"><%= news.title%></p>
