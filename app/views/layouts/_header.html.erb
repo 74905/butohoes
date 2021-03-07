@@ -21,6 +21,24 @@
           <% end %>
 
           <a href="#" class="bt cubic"><span class="hovering">coming soon</span><span class="default">Store</span></a>
+      <% else %>
+      <%= link_to home_bio_path, class:"bt cubic" do %>
+           <span class="hovering">BIO</span><span class="default">biography</span>
+          <% end %>
+
+          <%= link_to new_contact_path,class:"bt cubic" do %>
+          <span class="hovering">CONTACT</span><span class="default">Contact</span>
+          <% end %>
+
+          <%= link_to musics_path, class:"bt cubic" do %>
+          <span class="hovering">Discography</span><span class="default">Music</span>
+          <% end %>
+
+          <%= link_to news_index_path, class:"bt cubic " do %>
+          <span class="hovering">NEWS</span><span class="default">News</span>
+          <% end %>
+
+          <a href="#" class="bt cubic"><span class="hovering">coming soon</span><span class="default">Store</span></a>
       <% end %>
  </nav>
 </header>

@@ -1,0 +1,27 @@
+<main>
+ <div class="container">
+  <div class="row">
+      <div class="col-lg-2">
+      <span class="index-title">MUSIC</span>
+      </div>
+      <div class="col-lg-10">
+          <div class="row">
+            <% @musics.each do |music| %>
+              <div class="col-lg-4">
+                  <%= link_to music_path(music.id) do %>
+                    <div class="music-jk">
+                      <%= attachment_image_tag music, :image, format: 'png', fallback: "news.jpg", size: "246x200"  %>
+                      <div class="mask1"></div>
+                      <div class="mask2"></div>
+                      <div class="caption">
+                        <p>MORE</p>
+                      </div>
+                    </div>
+                  <% end %>
+              </div>
+            <% end %>
+          </div>
+      </div>
+  </div>
+ </div>
+</main>
