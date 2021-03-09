@@ -15,7 +15,7 @@ class MusicsController < ApplicationController
   end
 
   def index
-
+  @musics = Music.all
   end
   
   def show
@@ -26,7 +26,7 @@ class MusicsController < ApplicationController
 private
 
   def music_params
-    params.require(:music).permit(:image)
+    params.require(:music).permit(:image, :title, :price, :release)
   end
 
 end
