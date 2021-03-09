@@ -28,7 +28,7 @@
     visibility:		visible;
     & p{
       opacity:		1;
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'Cormorant Garamond', serif;
     }
   }
  & .mask1, .mask2{
@@ -58,7 +58,7 @@
   display: block;
   border-bottom: solid;
   padding-bottom: 10px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
 }
 .hoge{
   width: 400px;
@@ -145,4 +145,15 @@
   margin-top: 10px;
   margin-bottom: 10px;
   text-align: center;
+}
+.category{
+  display: block;
+}
+.categories-name{
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
 }

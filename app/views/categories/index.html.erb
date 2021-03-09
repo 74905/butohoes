@@ -1,0 +1,9 @@
+<%= form_with model:@category, local:true do |f| %>
+<%= f.label "カテゴリー"%>
+<%= f.text_field :name, class:"form-control"%>
+<%= f.submit "追加" %>
+<% end %>
+
+<% @categories.each do |category|%>
+<%= category.name %>
+<% end %>

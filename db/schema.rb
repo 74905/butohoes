@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_07_064646) do
+ActiveRecord::Schema.define(version: 2021_03_09_122017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "contacts", force: :cascade do |t|
     t.string "name"
@@ -44,6 +50,7 @@ ActiveRecord::Schema.define(version: 2021_03_07_064646) do
     t.string "release"
     t.string "title"
     t.string "presave"
+    t.integer "category_id"
   end
 
   create_table "news", force: :cascade do |t|
@@ -54,12 +61,13 @@ ActiveRecord::Schema.define(version: 2021_03_07_064646) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "notices", force: :cascade do |t|
-    t.string "notice_title"
-    t.text "introduction"
-    t.string "notice_image_id"
+  create_table "news_musics", force: :cascade do |t|
+    t.bigint "news_id"
+    t.bigint "music_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["music_id"], name: "index_news_musics_on_music_id"
+    t.index ["news_id"], name: "index_news_musics_on_news_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -75,4 +83,6 @@ ActiveRecord::Schema.define(version: 2021_03_07_064646) do
   end
 
   add_foreign_key "music_choices", "musics"
+  add_foreign_key "news_musics", "musics"
+  add_foreign_key "news_musics", "news"
 end

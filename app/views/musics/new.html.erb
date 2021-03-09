@@ -8,17 +8,25 @@
 
     <%= f.label "タイトル" %>
     <%= f.text_field :title, class:"form-control"%>
+          
+         
+           <%= f.label :"カテゴリー" %>
+           <div class="category">
+            <%= f.collection_select(:category_id, Category.all, :id, :name, prompt: "-- 選択してください--") %>
+          </div>
 
           <%= f.label "リリース日"%>
           <%= f.text_field :release, class:"form-control"%>
           
           <%= f.label "プリセーブ値段"%>
           <%= f.text_field :price, class:"form-control" %>
-
+          
+          <%= f.label "プリセーブURL"%>
+          <%= f.text_field :presave, class:"form-control"%>
     <div class="music-button">    
     <%= f.submit "作成", class:"btn btn-success mt-auto" %>
     </div>
-    
+
   <% end %>
   </div>
  </div>

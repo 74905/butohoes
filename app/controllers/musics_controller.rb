@@ -16,6 +16,7 @@ class MusicsController < ApplicationController
 
   def index
   @musics = Music.all
+  @categories = Category.all
   end
   
   def show
@@ -23,10 +24,11 @@ class MusicsController < ApplicationController
     @music_choice = MusicChoice.new
     @music_choices = @music.music_choices
   end
+ 
 private
 
   def music_params
-    params.require(:music).permit(:image, :title, :price, :release)
+    params.require(:music).permit(:category_id, :image, :title, :price, :release, :presave)
   end
 
 end
