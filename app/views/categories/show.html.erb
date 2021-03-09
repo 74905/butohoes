@@ -2,9 +2,9 @@
  <div class="container">
   <div class="row">
       <div class="col-lg-2">
-      <span class="index-title">MUSIC</span>
+      <span class="index-title"><%= link_to "MUSIC", musics_path %></span>
       <% @categories.each do | category| %>
-       <%= link_to category_path(name: category.name) do %>
+       <%= link_to category_path(category.name) do %>
          <span class="categories-name"><%= category.name %></span>
        <% end %>
       <% end %>

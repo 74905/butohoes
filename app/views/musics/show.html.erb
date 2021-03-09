@@ -15,13 +15,13 @@
     <%= attachment_image_tag @music, :image, format: 'png', class:"hoge"%>
     </div>
     <div class="col-lg-7 disco">
-    <span>MUSIC</span>
-    <span>single</span>
+    <span style="font-family: 'Cormorant Garamond', serif;">MUSIC</span>
+    <span><%= @music.category.name %></span>
     <span><%= @music.release %></span>
     <span><%= @music.title%></span>
     <span>01.T.O.L</span>
     <span>iTunes Store (<%= @music.price %>) / Apple Music / Spotify</span>
-    <a href="#" class="btn-open">Pre-Save</a>
+    <a href="<%= @music.presave %>" class="btn-open" target="_blank"rel="noopener noreferrer">Pre-Save</a>
     </div>
   </div>
   </div>
