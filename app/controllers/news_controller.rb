@@ -4,7 +4,7 @@ class NewsController < ApplicationController
   end
   
   def create
-    news = News.create(title: news_params[:title], body: news_params[:body], news_image: news_params[:news_params])
+    news = News.create(title: news_params[:title], body: news_params[:body], news_image: news_params[:news_image])
     
     if news_params[:music_id].present?
       music = Music.find_by(id: news_params[:music_id])
@@ -15,14 +15,13 @@ class NewsController < ApplicationController
     end
   end
   
-  def index 
-    @news = News.all.order(id: "DESC") 
+  def index
+    @news = News.all.order(id: "DESC")
   end
 
   def show
-    news = News.find(params[:id])
-    @news_music = NewsMusic.find_by(news_id: news.id)
-    binding.pry
+    @news = News.find(params[:id])
+    @news_music = NewsMusic.find_by(news_id: @news.id)
   end
   private
   def news_params
