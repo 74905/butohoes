@@ -1,15 +1,16 @@
 $(function() {
   let h = $(window).height();
   $('#butohes-log').height(h).css('display','block');
+  $('div').removeClass('animsition-overlay-slide');
   $('#butohes-log-image').css('display','block');
-  $('#global-container').css('display','none');
+  $('.global-container').css('display','none');
 });
 
 $(window).on('load', function () { //全ての読み込みが完了したら実行
   $('#butohes-log-image').delay(1500).fadeOut(800);
   $('#butohes-log').delay(2500).fadeOut(300);
-  $('#global-container').css('display','block');
-  $('#global-container').hide().fadeIn(5000);
+  $('.global-container').css('display','block');
+  $('.global-container').hide().fadeIn(5000);
   });
 
 $(window).scroll(function (){
@@ -24,14 +25,14 @@ $(window).scroll(function (){
   });
 
   $(document).ready(function() {
-    $(".animsition-overlay").animsition({
+    $(".global-container").animsition({
       inClass: 'overlay-slide-in-top',
       outClass: 'overlay-slide-out-top',
-      inDuration: 1500,
-      outDuration: 800,
+      inDuration: 300,
+      outDuration: 1000,
       linkElement: '.animsition-link',
       // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
-      loading: true,
+      loading: false,
       loadingParentElement: 'body', //animsition wrapper element
       loadingClass: 'animsition-loading',
       loadingInner: '', // e.g '<img src="loading.svg" />'
