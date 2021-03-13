@@ -1,13 +1,6 @@
-$( '.js-input' ).keyup(function() {
-  if( $(this).val() ) {
-     $(this).addClass('not-empty');
-  } else {
-     $(this).removeClass('not-empty');
-  }
-});
 $(document).ready(function() {
   $(".global-container").animsition({
-    inClass: 'overlay-slide-in-top',
+    inClass: 'overlay-slide-in-top-none',
     outClass: 'overlay-slide-out-top',
     inDuration: 1500,
     outDuration: 800,

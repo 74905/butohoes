@@ -4,41 +4,43 @@
   <% end %>
  <nav>
       <% if user_signed_in? %>
-          <%= link_to destroy_user_session_path, class:"bt cubic", method: :delete do %>
+          <%= link_to destroy_user_session_path, class:"bt cubic animsition-link", method: :delete do %>
            <span class="hovering">ログアウト</span><span class="default">logout</span>
           <% end %>
 
-          <%= link_to new_music_path,class:"bt cubic" do %>
+          <%= link_to new_music_path,class:"bt cubic animsition-link" do %>
           <span class="hovering">曲作成</span><span class="default">Create</span>
           <% end %>
 
-          <%= link_to musics_path, class:"bt cubic" do %>
-          <span class="hovering">Discography</span><span class="default">Music</span>
+          <%= link_to contacts_path, class:"bt cubic animsition-link" do %>
+          <span class="hovering">メール確認</span><span class="default">メール確認</span>
           <% end %>
 
-          <%= link_to new_news_path, class:"bt cubic " do %>
+          <%= link_to new_news_path, class:"bt cubic animsition-link" do %>
           <span class="hovering">News作成</span><span class="default">News</span>
           <% end %>
 
-          <a href="#" class="bt cubic"><span class="hovering">coming soon</span><span class="default">Store</span></a>
+          <%= link_to categories_path, class:"bt cubic animsition-link" do %>
+          <span class="hovering">カテゴリー作成</span><span class="default">カテゴリー作成</span>
+          <% end %>
       <% else %>
-      <%= link_to home_bio_path, class:"bt cubic" do %>
-           <span class="hovering">BIO</span><span class="default">biography</span>
-          <% end %>
+       <%= link_to news_index_path, class:"bt cubic animsition-link" do %>
+          <span class="hovering">お報せ</span><span class="default">News</span>
+       <% end %>
 
-          <%= link_to new_contact_path,class:"bt cubic" do %>
-          <span class="hovering">CONTACT</span><span class="default">Contact</span>
-          <% end %>
+       <%= link_to musics_path, class:"bt cubic animsition-link" do %>
+         <span class="hovering">楽曲</span><span class="default">Music</span>
+       <% end %>
+      
+      <%= link_to home_bio_path, class:"bt cubic animsition-link" do %>
+           <span class="hovering">我々</span><span class="default">Biography</span>
+      <% end %>
 
-          <%= link_to musics_path, class:"bt cubic" do %>
-          <span class="hovering">Discography</span><span class="default">Music</span>
-          <% end %>
+        <a href="#" class="bt cubic"><span class="hovering">coming soon</span><span class="default">Store</span></a>
 
-          <%= link_to news_index_path, class:"bt cubic " do %>
-          <span class="hovering">NEWS</span><span class="default">News</span>
+          <%= link_to new_contact_path,class:"bt cubic animsition-link" do %>
+          <span class="hovering">ご連絡</span><span class="default">Contact</span>
           <% end %>
-
-          <a href="#" class="bt cubic"><span class="hovering">coming soon</span><span class="default">Store</span></a>
       <% end %>
  </nav>
 </header>

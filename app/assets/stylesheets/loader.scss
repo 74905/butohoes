@@ -31,7 +31,7 @@
     &::after {
       @include animation(
         $name: kf-cover-slide,
-        $duration: 1.6s,
+        $duration: 2s,
         $timing-function: ease-in-out
       );
     }
@@ -45,7 +45,7 @@
     opacity: 1;
     @include animation(
       $name: kf-cover-show,
-      $duration: 1.6s,
+      $duration: 2s,
       $timing-function: ease-in-out
     );
   }

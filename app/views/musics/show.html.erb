@@ -6,7 +6,7 @@
   <%= attachment_image_tag choice, :background_image, format: 'png', size: "100x100" %>
   <% end %>
 
-  <%= link_to "プレビューをみる",music_music_choices_path(@music.id), "data-turbolinks" => "false" %>
+  <%= link_to "プレビューをみる",music_music_choices_path(@music.id), data: {"turbolinks" => false} %>
 <% else %>
 <main>
   <div class="container">
@@ -19,11 +19,13 @@
     <span><%= @music.category.name %></span>
     <span><%= @music.release %></span>
     <span><%= @music.title%></span>
-    <span>01.T.O.L</span>
+    <span><%= @music.title%></span>
     <span>iTunes Store (<%= @music.price %>) / Apple Music / Spotify</span>
-    <a href="<%= @music.presave %>" class="btn-open" target="_blank"rel="noopener noreferrer">Pre-Save</a>
+    <a href="<%= @music.presave %>" class="btn-open" target="_blank"rel="noopener noreferrer">STREAMING</a>
     </div>
   </div>
   </div>
 </main>
 <% end %>
+<%= javascript_include_tag 'aimsition.js' %>
+<%= javascript_include_tag 'musics.js' %>
