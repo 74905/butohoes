@@ -6,7 +6,7 @@ $("#news_news_image").on('change', function(e){
   reader.readAsDataURL(e.target.files[0]);
 });
 $(document).ready(function() {
-  $(".animsition-overlay").animsition({
+  $(".global-container").animsition({
     inClass: 'overlay-slide-in-top',
     outClass: 'overlay-slide-out-top',
     inDuration: 1500,
