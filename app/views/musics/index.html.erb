@@ -4,7 +4,7 @@
       <div class="col-lg-2">
       <span class="index-title">MUSIC</span>
       <% @categories.each do | category| %>
-       <%= link_to category_path(name: category.name) do %>
+       <%= link_to category_path(name: category.name), data: {"turbolinks" => false} do %>
          <span class="categories-name"><%= category.name %></span>
        <% end %>
       <% end %>
@@ -13,7 +13,7 @@
           <div class="row">
             <% @musics.each do |music| %>
               <div class="col-lg-4">
-                  <%= link_to music_path(music.id) do %>
+                  <%= link_to music_path(music.id), data: {"turbolinks" => false} do %>
                     <div class="music-jk">
                       <%= attachment_image_tag music, :image, format: 'png', fallback: "news.jpg", size: "246x200"  %>
                       <div class="mask1"></div>
@@ -30,4 +30,5 @@
   </div>
  </div>
 </main>
-<%= javascript_include_tag 'news.js' %>
+<%= javascript_include_tag 'aimsition.js' %>
+<%= javascript_include_tag 'musics.js' %>

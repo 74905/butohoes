@@ -1,19 +1,19 @@
   <main>
     <div class="main_visual">
-      <span class="visual-text">1st EP</span>
-      <span class="visual-text_main">Lost in Watercycle</span>
-      <span class="visual-text_create">2021 5 anonymous</span>
-      <a class="EP_link"><span>Coming Soon</span><em></em></a>
+      <span class="visual-text">1st SINGLE</span>
+      <span class="visual-text_main">Hyperblue</span>
+      <span class="visual-text_create">Out Now</span>
+      <a class="EP_link"><span>MORE</span><em></em></a>
     </div>
     <div class="main">
     <div class="news-title">
-      <span class="text">News</span>
+      <span class="text">NEWS</span>
     </div>
     <div class="container">
       <div class="row p-4 news-main">
         <% @news.each do |news| %>
           <div class="news-object col-lg-4 col-xs-12">
-          <%= link_to news_path(news.id) do %>
+          <%= link_to news_path(news.id), data: {"turbolinks" => false} do %>
             <div class="card bg-light h-100" style="width: 15rem; margin: 0 auto;">
                   <%= attachment_image_tag news, :news_image,　format: 'png', fallback: "news.jpg", size: "237x200" %>
                 <div class="card-body">
@@ -38,7 +38,7 @@
     <div class="container">
       <div class="row" style="margin-top: 100px;">
          <div class="col-lg-6" style="text-align: center;">
-         <span class="top-sns">PRE-SAVE</span>
+         <span class="top-sns">STREAMING</span>
           <iframe src = " https://lnk.ffm.to/horizon " width = " 320 " height = " 500 " frameBorder = "0"></iframe>
          </div>
           <div class="col-lg-6" style="text-align: center;">
@@ -51,6 +51,6 @@
     </div>
   </div>
   </main>
-<%#= javascript_include_tag 'homes.js' %>
+<%= javascript_include_tag 'homes.js' %>
 <%= javascript_include_tag 'aimsition.js' %>
 

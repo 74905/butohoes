@@ -28,7 +28,7 @@ $(window).scroll(function (){
     $(".global-container").animsition({
       inClass: 'overlay-slide-in-top',
       outClass: 'overlay-slide-out-top',
-      inDuration: 300,
+      inDuration: 1500,
       outDuration: 1000,
       linkElement: '.animsition-link',
       // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'

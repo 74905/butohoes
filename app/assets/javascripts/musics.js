@@ -1,10 +1,3 @@
-$( '.js-input' ).keyup(function() {
-  if( $(this).val() ) {
-     $(this).addClass('not-empty');
-  } else {
-     $(this).removeClass('not-empty');
-  }
-});
 $(document).ready(function() {
   $(".global-container").animsition({
     inClass: 'overlay-slide-in-top',

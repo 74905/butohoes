@@ -9,8 +9,8 @@ main{
 }
 .main_visual{
  padding-top: 30px;
- background-image: image-url("EP.jpg");
- background-position: bottom;
+ background-image: image-url("FIX.png");
+ background-position: 50%;;
  background-repeat: no-repeat;
  background-size: cover;
  width: 100%;
@@ -110,13 +110,17 @@ main{
 .news-title{
   text-align: center;
   & .text{
-  color: black;
-  font-size: 40px;
-  font-family: 'Noto Serif', serif;
+    color: black;
+    font-size: 40px;
+    font-family: 'Noto Serif', serif;
+    display: block;
+    border-bottom: solid;
+    width: 960px;
+    margin: auto;
   }
 }
 .card-text{
-  font-family: 'Noto Serif', serif;
+  font-family: 'MS PMincho', serif;
   color: black;
 }
 .more-news{
@@ -259,9 +263,7 @@ main{
   right: 100%;
 }
 }
-.news-main{
-  border: double black;
-}
+
 .news-object{
   opacity: 0;
   transform : translate(0, 50px);
@@ -296,4 +298,7 @@ main{
   margin-bottom: 26px;
   border-bottom: solid;
   font-family: 'Noto Serif', serif;
+  width: 402px;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
