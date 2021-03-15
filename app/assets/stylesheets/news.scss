@@ -19,11 +19,12 @@
   font-size: 26px;
   font-family: 'Cormorant Garamond', serif;
   margin-bottom: 12px;
+  margin-top: 20px;
 }
 .news-created{
   text-align: center;
   font-size: 18px;
-  margin-bottom: 3px;
+  margin-bottom: 20px;
   font-family: 'Cormorant Garamond', serif;
 }
 .news-body{
@@ -35,13 +36,14 @@
 .news-image{
   text-align: center;
   margin-bottom: 20px;
+  margin-top: 20px;
   & .jk{
     height: 400px;
     width: 400px;
   }
 }
 .news-link{
-  margin-top: 10px;
+  margin-top: 40px;
   margin-bottom: 10px;
 }
 .btn-open{
@@ -90,4 +92,17 @@
   height: 300px;
   margin-bottom: 30px;
   margin-left: 200px;
+}
+@media screen and (max-width: 600px){
+  .news-mobile{
+   margin-top: 20px;
+  }
+  .news-image {
+    padding-right: 0px;
+    padding-left: 0px;
+    & .jk {
+      height: 345px;
+      width: 345px;
+   }
+  }
 }

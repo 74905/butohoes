@@ -15,7 +15,7 @@
               <div class="col-lg-4">
                   <%= link_to music_path(music.id), data: {"turbolinks" => false} do %>
                     <div class="music-jk">
-                      <%= attachment_image_tag music, :image, format: 'png', fallback: "news.jpg", size: "246x200"  %>
+                      <%= attachment_image_tag music, :image, format: 'png', fallback: "news.jpg", class:"index-music" %>
                       <div class="mask1"></div>
                       <div class="mask2"></div>
                       <div class="caption">

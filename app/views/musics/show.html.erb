@@ -11,8 +11,8 @@
 <main>
   <div class="container">
   <div class="row">
-    <div class="col-lg-5　col-xs-12 mt-4">
-    <%= attachment_image_tag @music, :image, format: 'png', class:"hoge"%>
+    <div class="col-lg-5　col-xs-12 mt-4 music-single">
+    <%= attachment_image_tag @music, :image, format: 'png', class:"music-size"%>
     </div>
     <div class="col-lg-7 disco">
     <span style="font-family: 'Cormorant Garamond', serif;">MUSIC</span>
@@ -20,7 +20,7 @@
     <span><%= @music.release %></span>
     <span><%= @music.title%></span>
     <span><%= @music.title%></span>
-    <span>iTunes Store (<%= @music.price %>) / Apple Music / Spotify</span>
+    <span><%= @music.price %></span>
     <a href="<%= @music.presave %>" class="btn-open" target="_blank"rel="noopener noreferrer">STREAMING</a>
     </div>
   </div>

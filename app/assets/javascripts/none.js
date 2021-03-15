@@ -1,9 +1,9 @@
 $(document).ready(function() {
-  $(".global-container").animsition({
+  $(".animsition").animsition({
     inClass: 'overlay-slide-in-top-none',
-    outClass: 'overlay-slide-out-top',
+    outClass: 'fade-out',
     inDuration: 1500,
-    outDuration: 800,
+    outDuration: 1500,
     linkElement: '.animsition-link',
     // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
     loading: true,
@@ -16,7 +16,7 @@ $(document).ready(function() {
     browser: [ 'animation-duration', '-webkit-animation-duration'],
     // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
     // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
-    overlay : true,
+    overlay : false,
     overlayClass : 'animsition-overlay-slide',
     overlayParentElement : 'body',
     transition: function(url){ window.location.href = url; }

@@ -1779,9 +1779,7 @@
 .overlay-slide-in-top-none {
   top: 0;
   height: 0;
-  display: none;
-  -webkit-animation-name: overlay-slide-in-top-none;
-  animation-name: overlay-slide-in-top-none;
+  opacity: 1;
 }
 
 .overlay-slide-in-top {

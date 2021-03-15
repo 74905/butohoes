@@ -16,3 +16,9 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+
+$(document).ready(function(){
+  $('.mobile-menu-btn').click(function(){
+    $('.mobile-menu').toggle();
+  })
+})
