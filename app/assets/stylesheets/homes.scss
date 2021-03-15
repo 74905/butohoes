@@ -2,13 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 main{
-  padding-top: 30px;
+  padding-top: 100px;
   min-height: 100vh;
   background-size: auto auto;
   background-color: rgba(238, 238, 238, 0.5);
 }
 .main_visual{
- padding-top: 30px;
+ margin-top: 30px;
  background-image: image-url("FIX.png");
  background-position: 50%;;
  background-repeat: no-repeat;
@@ -301,4 +301,79 @@ main{
   width: 402px;
   margin: 0 auto;
   margin-bottom: 20px;
+}
+@media screen and (max-width: 600px) {
+  .header{
+    justify-content: flex-end;
+  }
+  .desk-top_header{
+    display: none;
+  }
+  .news-title .text{
+    width: 310px;
+  }
+  .main_visual{
+    padding: 41px;
+    background-position: 44% 22%;
+    background-repeat: no-repeat;
+    background-size: 113%;
+    width: 100%;
+    height: 500px;
+    text-align: center;
+    & .EP_link {
+    cursor: pointer;
+    background-color: transparent;
+    width: 300px;
+    height: 64px;
+    line-height: 64px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    box-shadow: 0px 0px 17px 1px rgba(0, 0, 0, 0.34);
+    display: block;
+    margin-left: 42%;
+    margin-top: 60px;
+}
+}
+.top-sns{
+  width: 310px;
+}
+.news-object.scrollin {
+  opacity: 1;
+  transform: translate(0, 0);
+  margin-bottom: 100px;
+}
+.bio-main{
+  width: 100%;
+  height: 400px;
+  & .image{
+    background-image: image-url("bio.jpg");
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 290px;
+  }
+}
+}
+@media (max-width: 1020px) and (min-width: 768px) {
+  .header{
+    justify-content: flex-end;
+  }
+  .desk-top_header{
+    display: none;
+  }
+  .news-title .text{
+    width: 380px;
+  }
+  .main_visual .EP_link {
+    margin-left: 37%;
+  }
+  .news-object.scrollin {
+   margin-bottom: 50px;
+  }
+}
+@media screen and (min-width: 1021px) {
+  .mobile-menu-btn{
+    display: none;
+  }
 }

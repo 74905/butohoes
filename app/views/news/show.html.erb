@@ -1,6 +1,6 @@
 <main>
 <div class="container">
-  <div class="row">
+  <div class="row" style=" margin-left: 0; margin-right: 0;">
 
    <div class="col-lg-12">
    <%= link_to news_index_path, data: {"turbolinks" => false} do %>
@@ -8,7 +8,7 @@
   <% end %>
    </div>
 
-    <div class="col-lg-6 news-image">
+    <div class="col-lg-6 news-image" style="padding-left: 0; padding-right: 0;">
     <%= attachment_image_tag @news, :news_image, class:"jk",　format: 'png', fallback: "news.jpg"%>
     </div>
    
@@ -22,13 +22,14 @@
     <div class="news-body">
     <%= @news.body%>
     </div>
-    </div>
 
       <% if @news_music.present?%>
-      <div class="col-lg-12 news-link">
+      <div class="news-link">
        <%= link_to("show-more", music_path(@news_music.music),{class:"btn-open animsition-link"}) %>
       </div>
       <% end %>
+
+    </div>
 
    </div>
   </div>
