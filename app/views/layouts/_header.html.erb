@@ -4,7 +4,7 @@
       <% end %>
     <nav class="desk-top_header">
           <% if user_signed_in? %>
-              <%= link_to destroy_user_session_path, class:"bt cubic animsition-link", method: :delete do %>
+              <%= link_to destroy_user_session_path, class:"bt cubic", method: :delete do %>
               <span class="hovering">ログアウト</span><span class="default">logout</span>
               <% end %>
 
