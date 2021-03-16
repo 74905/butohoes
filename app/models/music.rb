@@ -5,4 +5,5 @@ class Music < ApplicationRecord
   has_many :music_choices, dependent: :destroy
   has_many :news_musics, dependent: :destroy
   has_many :news, through: :news_musics
+  has_many :top_musics, dependent: :destroy
 end

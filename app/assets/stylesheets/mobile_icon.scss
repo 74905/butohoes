@@ -1,17 +1,25 @@
 .mobile-menu{
   position: fixed;
   top: 60px;
-  right: 0;
+  right: 137px;
   display: none;
+  &__main{
+    perspective: 2000px;
+    transform-style: preserve-3d;
+  }
+  &__item{
+    list-style: none;
+    display: block;
+    transform: translate3d(0,0, -1000px);
+    transition: transform 0.3s, opacity 0.2s;
+    //opacity: 0;
+  }
+  &__link{
+    display: block;
+    margin: 30px;
+    
+  }
 }
-#container{
-    position: relative;
-    background-color: transparent;
-    z-index: 2;
-    transition: all 0.5s;
-}
-
-
 .mobile-menu-btn {
   background-color: unset;
   border: none;
@@ -33,9 +41,10 @@
   }
 }
 .menu-open {
-  background-color: black;
   &.global-container{
     transform: translate(-300px, 60px);
+    box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
+    background-color: black;
   }
 
   & .mobile-menu-btn {
