@@ -28,56 +28,38 @@
     </div>
   </div>
   <div class="global-container">
-    <%= render "layouts/header" %>
-      <%= yield %>
-    <footer>
-    <div class="footer-visual">
-    <p class="footer-text">©butohes</p>
-     <a href="https://www.youtube.com/channel/UCSGWPh94G3eSPPEV6bnjJ6g"  target="_blank"rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-     <a href="https://www.instagram.com/butohesgram/"  target="_blank"rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-     <a href="https://butohes.bandcamp.com/releases"  target="_blank"rel="noopener noreferrer"><i class="fab fa-bandcamp"></i></a>
-     <a href="https://soundcloud.com/butohes_japan/"  target="_blank"rel="noopener noreferrer"><i class="fab fa-soundcloud"></i></a>
-     <a href="https://twitter.com/butohes_japan"  target="_blank"rel="noopener noreferrer"><i class="fab fa-twitter-square"></i></a>
-    </div>
-    </footer>
+      <%= render "layouts/header" %>
+        <%= yield %>
+      <footer>
+      <div class="footer-visual">
+      <p class="footer-text">©butohes</p>
+      <a href="https://www.youtube.com/channel/UCSGWPh94G3eSPPEV6bnjJ6g"  target="_blank"rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/butohesgram/"  target="_blank"rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+      <a href="https://butohes.bandcamp.com/releases"  target="_blank"rel="noopener noreferrer"><i class="fab fa-bandcamp"></i></a>
+      <a href="https://soundcloud.com/butohes_japan/"  target="_blank"rel="noopener noreferrer"><i class="fab fa-soundcloud"></i></a>
+      <a href="https://twitter.com/butohes_japan"  target="_blank"rel="noopener noreferrer"><i class="fab fa-twitter-square"></i></a>
+      </div>
+      </footer>
   </div>
+  <%= render "layouts/mobilenav" %>
  </div>
- <nav class="mobile-menu">
-  <ul class="mobile-menu__main">
-      <li class="mobile-menu__item">
-      <%= link_to news_index_path, class:"mobile-menu__link animsition-link" do %>
-                <span class="mobile-title">お報せ</span><span class="sub-title">News</span>
+      <% if user_signed_in?%>
+      <style>
+      header {
+        width: 100%;
+        height: 60px;
+        background-color: black;
+        display: flex;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        position: relative;
+      }
+      .animsition{
+        opacity: 1;
+      }
+      </style>
       <% end %>
-      </li>
-      <li class="mobile-menu__item">
-      <%= link_to musics_path, class:"mobile-menu__link animsition-link" do %>
-              <span class="mobile-title">楽曲</span><span class="sub-title">Music</span>
-        <% end %>
-      </li>
-      <li class="mobile-menu__item">
-      <%= link_to musics_path, class:"mobile-menu__link animsition-link" do %>
-              <span class="mobile-title">楽曲</span><span class="sub-title">Music</span>
-      <% end %>
-      </li>
-  </ul>
-</nav>
-<% if user_signed_in?%>
-<style>
-header {
-  width: 100%;
-  height: 60px;
-  background-color: black;
-  display: flex;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  position: relative;
-}
-.animsition{
-  opacity: 1;
-}
-</style>
-<% end %>
-  </body>
+</body>
   <%= javascript_include_tag 'mobile.js' %>
 </html>

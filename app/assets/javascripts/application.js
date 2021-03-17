@@ -17,8 +17,8 @@
 //= require activestorage
 //= require turbolinks
 
-$(document).ready(function(){
-  $('.mobile-menu-btn').click(function(){
-    $('.mobile-menu').toggle();
-  })
-})
+// $(document).ready(function(){
+//   $('.mobile-menu-btn').click(function(){
+//     $('.mobile-menu').toggle();
+//   })
+// })

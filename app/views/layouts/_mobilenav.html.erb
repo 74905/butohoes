@@ -1,0 +1,33 @@
+<nav class="mobile-menu">
+      <ul class="mobile-menu__main">
+          <li class="mobile-menu__item">
+          <%= link_to news_index_path, class:"mobile-menu__link animsition-link" do %>
+                    <span class="mobile-title">News</span><span class="sub-title">お報せ</span>
+          <% end %>
+          </li>
+          
+          <li class="mobile-menu__item">
+          <%= link_to musics_path, class:"animsition-link mobile-menu__link" do %>
+                  <span class="mobile-title">Music</span><span class="sub-title">楽曲</span>
+            <% end %>
+          </li>
+
+          <li class="mobile-menu__item">
+          <%= link_to  home_bio_path, class:"mobile-menu__link animsition-link" do %>
+                  <span class="mobile-title">Biography</span><span class="sub-title">我々</span>
+          <% end %>
+          </li>
+
+          <li class="mobile-menu__item">
+          <%= link_to root_path, class:"mobile-menu__link animsition-link" do %>
+                  <span class="mobile-title">Store</span><span class="sub-title">coming soon</span>
+          <% end %>
+          </li>
+
+           <li class="mobile-menu__item">
+          <%= link_to new_contact_path, class:"mobile-menu__link animsition-link" do %>
+                  <span class="mobile-title">Contact</span><span class="sub-title">ご連絡</span>
+          <% end %>
+          </li>
+      </ul>
+    </nav>

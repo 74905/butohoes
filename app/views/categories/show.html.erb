@@ -2,9 +2,9 @@
  <div class="container">
   <div class="row">
       <div class="col-lg-2">
-      <span class="index-title"><%= link_to "MUSIC", musics_path %></span>
+      <span class="index-title">MUSIC</span>
       <% @categories.each do | category| %>
-       <%= link_to category_path(category.name) do %>
+       <%= link_to category_path(name: category.name), class:"animsition-link", data: {"turbolinks" => false} do %>
          <span class="categories-name"><%= category.name %></span>
        <% end %>
       <% end %>
@@ -12,10 +12,10 @@
       <div class="col-lg-10">
           <div class="row">
             <% @musics.each do |music| %>
-              <div class="col-lg-4">
+              <div class="col-lg-4 col-md-6">
                   <%= link_to music_path(music.id), data: {"turbolinks" => false} do %>
                     <div class="music-jk">
-                      <%= attachment_image_tag music, :image, format: 'png', fallback: "news.jpg", size: "246x200"  %>
+                      <%= attachment_image_tag music, :image, format: 'png', fallback: "news.jpg", class:"index-music" %>
                       <div class="mask1"></div>
                       <div class="mask2"></div>
                       <div class="caption">
@@ -30,3 +30,5 @@
   </div>
  </div>
 </main>
+<%= javascript_include_tag "musics.js"%>
+<%= javascript_include_tag 'aimsition.js' %>

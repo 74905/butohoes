@@ -7,7 +7,7 @@
         <div class="col-lg-10">
             <div class="row">
                 <% @news.each do |news| %>
-          <div class="col-lg-4 col-xs-12 mb-3 news-mobile">
+          <div class="col-lg-4 col-md-6 col-xs-12 mb-3 news-mobile">
           <%= link_to news_path(news.id), data: {"turbolinks" => false} do %>
             <div class="card bg-light h-100" style="width: 15rem; margin: 0 auto;">
                   <%= attachment_image_tag news, :news_image,　format: 'png', fallback: "news.jpg", size: "237x237" %>

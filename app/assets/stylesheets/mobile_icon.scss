@@ -1,24 +1,30 @@
 .mobile-menu{
   position: fixed;
   top: 60px;
-  right: 137px;
-  display: none;
+  // right: 80px;
+  right: 95px;
   &__main{
     perspective: 2000px;
     transform-style: preserve-3d;
   }
-  &__item{
-    list-style: none;
-    display: block;
-    transform: translate3d(0,0, -1000px);
-    transition: transform 0.3s, opacity 0.2s;
-    //opacity: 0;
-  }
-  &__link{
-    display: block;
-    margin: 30px;
-    
-  }
+    &__item{
+      list-style: none;
+      display: block;
+      transform: translate3d(0,0, -1000px);
+      transition: transform 0.3s, opacity 0.2s;
+      opacity: 0;
+    }
+    &__link{
+      display: block;
+      margin: 30px;
+    }
+}
+
+.sub-title{
+  display: block;
+  font-size: 14px;
+  color: #C0C0C0;
+  font-family: "Playfair Display", serif;
 }
 .mobile-menu-btn {
   background-color: unset;
@@ -42,11 +48,29 @@
 }
 .menu-open {
   &.global-container{
-    transform: translate(-300px, 60px);
-    box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
+    // transform: translate(-300px, 60px);
+    // box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
     background-color: black;
   }
-
+  &.mobile-menu{
+    z-index: 100;
+  }
+  & .mobile-menu__item{
+    opacity: 1;
+    transform: none;
+    z-index: 90;
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}){
+        transition-delay: $i * 0.07s;
+      }
+    }
+    & .mobile-title{
+      font-weight: 600;
+      font-size: 25px;
+      font-family: "Playfair Display", serif;
+      color: white;
+    }
+  }
   & .mobile-menu-btn {
       & > span {
           background-color: white;
@@ -65,4 +89,23 @@
           }
       }
   }
+  & main{
+    opacity: 0.4;
+    transition: transform 0.7s;
+  }
+  & .news-mobile{
+    display: none;
+  }
+  // & .bio-main{
+  //   opacity: 0;
+  // }
+  // & .row{
+  //   opacity: 0;
+  // }
+  // & .contact-title{
+  //   opacity: 0;
+  // }
+  // & section{
+  //   opacity: 0;
+  // }
 }

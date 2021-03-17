@@ -24,11 +24,11 @@
               <span class="hovering">カテゴリー作成</span><span class="default">カテゴリー作成</span>
               <% end %>
           <% else %>
-          <%= link_to news_index_path, class:"bt cubic animsition-link" do %>
+          <%= link_to news_index_path, class:"bt cubic animsition-link", data: {"turbolinks" => false} do %>
               <span class="hovering">お報せ</span><span class="default">News</span>
           <% end %>
 
-          <%= link_to musics_path, class:"bt cubic animsition-link" do %>
+          <%= link_to musics_path, class:"bt cubic animsition-link", data: {"turbolinks" => false} do %>
             <span class="hovering">楽曲</span><span class="default">Music</span>
           <% end %>
           

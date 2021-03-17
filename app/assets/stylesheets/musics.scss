@@ -6,9 +6,11 @@
   margin: 20px;
   position: relative;
   overflow: hidden;
+  width: 246px;
+  height: 246px;
   & .index-music{
     width: 246px;
-    height: 200px;
+    height: 246px;
   }
   & .caption{
     width:			100%;
@@ -23,7 +25,7 @@
     transition:		all 0.4s step-end;
     & p{
       font-size:		130%;
-      padding-top:		75px;
+      padding-top:		108px;
       color:			#fff;
       opacity: 0;
     }
@@ -170,11 +172,22 @@
   .music-single{
     margin: auto;
    & .music-size{
-    width: 365px;
-    height: 365px;
+    width: 345px;
+    height: 345px;
   }
 }
 .disco .btn-open{
   margin-bottom: 20px;
+}
+}
+
+@media (max-width: 1020px) and (min-width: 768px) {
+  .music-single{
+    text-align: center;
+  }
+  .disco{
+    & .btn-open{
+    margin-bottom: 10px;
+  }
 }
 }
